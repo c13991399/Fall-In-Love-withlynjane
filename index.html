@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fall In Love 密語任務</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('background.gif') no-repeat center center fixed;
+      background-size: cover;
+      font-family: "微軟正黑體", sans-serif;
+      color: #fff;
+      text-align: center;
+    }
+    .container {
+      margin-top: 20vh;
+    }
+    input[type="text"] {
+      padding: 10px;
+      font-size: 18px;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      margin-left: 10px;
+      background-color: #ff9edb;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .hint {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #ffdaff;
+    }
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Fall In Love 密語任務</h1>
+    <input type="text" id="codeInput" placeholder="輸入密語" />
+    <button onclick="checkCode()">進入驚喜</button>
+    <div class="hint">提示：交往日4碼 + 我生日3碼（共7碼）</div>
+  </div>
+  <audio autoplay loop>
+    <source src="love_surprise_bgm.mp3" type="audio/mpeg" />
+  </audio>
+  <script>
+    function checkCode() {
+      const input = document.getElementById('codeInput').value;
+      if (input === "0520905") {
+        window.location.href = "success.html";
+      } else {
+        alert("密語錯誤，請再試一次！");
+      }
+    }
+  </script>
+</body>
+</html>
