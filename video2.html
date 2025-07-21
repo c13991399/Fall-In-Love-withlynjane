@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>我的18～現在</title>
+  <style>
+    body {
+      background: #000;
+      color: #fff;
+      font-family: "微軟正黑體", sans-serif;
+      text-align: center;
+      padding-top: 100px;
+    }
+    input {
+      padding: 10px;
+      font-size: 18px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>我的18～現在</h1>
+  <p>2024.03.05</p>
+  <p>請輸入密碼以觀看影片：</p>
+  <input type="password" id="password" placeholder="輸入密碼" />
+  <button onclick="checkPassword()">確認</button>
+  <script>
+    function checkPassword() {
+      var pw = document.getElementById('password').value;
+      if (pw === "0520905") {
+        window.location.href = "https://www.youtube.com/watch?v=xrsgYxj-N40";
+      } else {
+        alert("密碼錯誤，請再試一次！");
+      }
+    }
+  </script>
+</body>
+</html>
