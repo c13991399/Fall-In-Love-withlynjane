@@ -2,8 +2,8 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fall In Love 密語任務</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     body {
       margin: 0;
@@ -77,18 +77,17 @@
 
     <div class="extra-links">
       <h3>🎬 更多回憶密語：</h3>
-
       <div class="notice">🔧 如進不去請將網址結尾改為 <b>video1.html</b> 再按 Enter</div>
-      <li><a href="影片1.html">💍 婚禮片頭曲（輸入密碼）</a></li>
-
-      <div class="notice">🔧 如進不去請將網址結尾改為 <b>video2.html</b> 再按 Enter</div>
-      <li><a href="影片2.html">🕊️ 我的18～現在（輸入密碼）</a></li>
-
-      <li><a href="open.html" target="_blank">🎁 正緣驚喜影片（直接開）</a></li>
+      <ul>
+        <li><a href="影片1.html">💍 婚禮片頭曲（輸入密碼）</a></li>
+        <li><a href="影片2.html">🕊️ 我的18～現在（輸入密碼）</a></li>
+        <li><a href="open.html" target="_blank">🎁 正緣驚喜影片（直接開）</a></li>
+      </ul>
     </div>
   </div>
 
-  <audio autoplay loop hidden>
+  <!-- 修正版背景音樂 -->
+  <audio id="bgm" controls hidden loop>
     <source src="love_surprise_bgm.mp3" type="audio/mpeg" />
   </audio>
 
@@ -101,6 +100,14 @@
         alert("密語錯誤，請再試一次！");
       }
     }
+
+    // 解決自動播放限制：點畫面一次即播放音樂
+    document.addEventListener('DOMContentLoaded', function () {
+      const bgm = document.getElementById('bgm');
+      document.body.addEventListener('click', () => {
+        bgm.play();
+      }, { once: true });
+    });
   </script>
 </body>
 </html>
