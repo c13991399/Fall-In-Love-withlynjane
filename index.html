@@ -2,27 +2,18 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fall In Love 密語任務</title>
+  <title>💍 婚禮片頭曲</title>
   <style>
     body {
-      margin: 0;
-      padding: 0;
-      background: url('background.gif') no-repeat center center fixed;
-      background-size: cover;
-      font-family: "微軟正黑體", sans-serif;
+      background: #000;
       color: #fff;
+      font-family: "微軟正黑體", sans-serif;
       text-align: center;
+      padding-top: 100px;
     }
-    .container {
-      margin-top: 20vh;
-    }
-    input[type="text"] {
+    input {
       padding: 10px;
       font-size: 18px;
-      border-radius: 5px;
-      border: none;
-      outline: none;
     }
     button {
       padding: 10px 20px;
@@ -33,61 +24,40 @@
       border-radius: 5px;
       cursor: pointer;
     }
-    .hint {
-      margin-top: 10px;
-      font-size: 16px;
+    a.quick {
+      display: block;
+      margin-top: 20px;
       color: #ffdaff;
-    }
-    .extra-links {
-      margin-top: 40px;
-      color: #fff;
-    }
-    .extra-links h3 {
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
-    .extra-links ul {
-      list-style: none;
-      padding: 0;
-    }
-    .extra-links li {
-      margin: 6px 0;
-    }
-    .extra-links a {
-      color: #ffd1f9;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .extra-links a:hover {
       text-decoration: underline;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Fall In Love 密語任務</h1>
-    <input type="text" id="codeInput" placeholder="輸入密語" />
-    <button onclick="checkCode()">進入驚喜</button>
-    <div class="hint">提示：date4碼 + 我生日3碼（共7碼）</div>
-    <div class="extra-links">
-      <h3>🎬 更多回憶密語：</h3>
-      <ul>
-        <li><a href="video1.html">💍 婚禮片頭曲（輸入密碼）</a></li>
-        <li><a href="video2.html">🕊️ 我的18～現在（輸入密碼）</a></li>
-        <li><a href="open.html" target="_blank">🎁 正緣驚喜影片（直接開）</a></li>
-      </ul>
-    </div>
-  </div>
-  <audio id="bgm" src="love_surprise_bgm.mp3" autoplay muted loop></audio>
+  <h1>💍 婚禮片頭曲</h1>
+  <p>2024.03.15</p>
+  <p>請輸入密碼以觀看影片：</p>
+  <input type="password" id="password" placeholder="輸入密碼" />
+  <button onclick="checkPassword()">確認</button>
+
+  <a class="quick" onclick="promptAccess()">🔑 快速輸入密語</a>
+
   <script>
-    function checkCode() {
-      const input = document.getElementById('codeInput').value;
-      if (input === "0520905") {
-        document.getElementById("bgm").muted = false;
-        document.getElementById("bgm").play();
-        window.location.href = "success.html";
+    function checkPassword() {
+      var pw = document.getElementById('password').value;
+      if (pw === "0520905") {
+        window.location.href = "https://www.youtube.com/watch?v=1qzWZtcHM5E";
       } else {
-        alert("密語錯誤，請再試一次！");
+        alert("密碼錯誤，請再試一次！");
+      }
+    }
+
+    function promptAccess() {
+      var input = prompt("輸入密語");
+      if (input === "0520905") {
+        window.location.href = "https://youtu.be/1qzWZtcHM5E";
+      } else {
+        alert("錯誤，請再試一次！");
       }
     }
   </script>
