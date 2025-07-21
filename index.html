@@ -5,30 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fall In Love 密語任務</title>
   <style>
-    .extra-links {
-  margin-top: 40px;
-  color: #fff;
-}
-.extra-links h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-.extra-links ul {
-  list-style: none;
-  padding: 0;
-}
-.extra-links li {
-  margin: 6px 0;
-}
-.extra-links a {
-  color: #ffd1f9;
-  text-decoration: none;
-  font-weight: bold;
-}
-.extra-links a:hover {
-  text-decoration: underline;
-}
-
     body {
       margin: 0;
       padding: 0;
@@ -62,8 +38,28 @@
       font-size: 16px;
       color: #ffdaff;
     }
-    audio {
-      display: none;
+    .extra-links {
+      margin-top: 40px;
+      color: #fff;
+    }
+    .extra-links h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    .extra-links ul {
+      list-style: none;
+      padding: 0;
+    }
+    .extra-links li {
+      margin: 6px 0;
+    }
+    .extra-links a {
+      color: #ffd1f9;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .extra-links a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -74,21 +70,21 @@
     <button onclick="checkCode()">進入驚喜</button>
     <div class="hint">提示：date4碼 + 我生日3碼（共7碼）</div>
     <div class="extra-links">
-  <h3>🎬 更多回憶密語：</h3>
-  <ul>
-    <li><a href="影片1.html">💍 婚禮片頭曲（輸入密碼）</a></li>
-    <li><a href="影片2.html">🕊️ 我的18～現在（輸入密碼）</a></li>
-    <li><a href="open.html" target="_blank">🎁 正緣驚喜影片（直接開）</a></li>
-  </ul>
-</div>
+      <h3>🎬 更多回憶密語：</h3>
+      <ul>
+        <li><a href="video1.html">💍 婚禮片頭曲（輸入密碼）</a></li>
+        <li><a href="video2.html">🕊️ 我的18～現在（輸入密碼）</a></li>
+        <li><a href="open.html" target="_blank">🎁 正緣驚喜影片（直接開）</a></li>
+      </ul>
+    </div>
   </div>
-  <audio autoplay loop>
-    <source src="love_surprise_bgm.mp3" type="audio/mpeg" />
-  </audio>
+  <audio id="bgm" src="love_surprise_bgm.mp3" autoplay muted loop></audio>
   <script>
     function checkCode() {
       const input = document.getElementById('codeInput').value;
       if (input === "0520905") {
+        document.getElementById("bgm").muted = false;
+        document.getElementById("bgm").play();
         window.location.href = "success.html";
       } else {
         alert("密語錯誤，請再試一次！");
